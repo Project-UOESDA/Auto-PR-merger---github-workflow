@@ -1,1 +1,1 @@
-# Auto-PR-merger---github-workflow
+This is an automatic PR merger
