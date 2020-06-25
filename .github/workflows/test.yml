@@ -2,19 +2,19 @@
 name: test workflow
 # event that will trigger the workflow
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  pull_request: 
+    types: [ opened,reopened ]
 
-# set up jobs
+# jobs
 jobs:
-  build:
+  merge:
     
-    name: Running test script
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Finishing the test
-        run: echo Completed task,Hello,World!
-     
+     name: Auto merge
+     runs-on: ubuntu-latest
+     steps:
+       - uses: hmarr/auto-approve-action@v2.0.0
+         if: github.actor == 'zachy_dev' || github.actor == 'dependent-preview[bot]'
+         with:
+           github-token: "${{ secret.GITHUB_TOKEN}}" 
+       - name: Finishing up and merging PR
+         run: echo merged PR!!
