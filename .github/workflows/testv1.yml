@@ -1,17 +1,17 @@
-# workflow name
-name: test
+# name of the workflow
+name: Test workflow
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
-# jobs
 jobs:
-  build:
-    name: Building test file
+  #job1 
+  test:
+    
+    name: Running tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: finalizing the test
-        run: Completed, Hello,World!
+      - uses: actions/checkout@v2 
+      - name: trying to check the tests
+        run: echo Hello,World!ld!
