@@ -1,5 +1,5 @@
 # workflow name
-name: test workflow
+name: test
 on:
   push:
     branches: [ master ]
