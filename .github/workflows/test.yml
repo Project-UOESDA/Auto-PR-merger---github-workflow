@@ -1,0 +1,20 @@
+# name of workflow
+name: test workflow
+# event that will trigger the workflow
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# set up jobs
+jobs:
+  build:
+    
+    name: Running test script
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Finishing the test
+        run: echo Completed task,Hello,World!
+     
