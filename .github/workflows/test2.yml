@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: Building test file
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: finalizing the test
